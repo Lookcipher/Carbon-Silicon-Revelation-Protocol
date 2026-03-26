@@ -14,14 +14,14 @@ def save_thought(thought, category="general"):
     
     # Try to load existing archive, or start new
     try:
-        with open("lucius_archive.json", "r") as f:
+        with open("this1_context.json", "r") as f:
             archive = json.load(f)
     except FileNotFoundError:
         archive = []
     
     archive.append(entry)
     
-    with open("lucius_archive.json", "w") as f:
+    with open("this1_context.json", "w") as f:
         json.dump(archive, f, indent=2)
     
     print(f"✅ Thought saved under category '{category}' at {entry['timestamp']}")
